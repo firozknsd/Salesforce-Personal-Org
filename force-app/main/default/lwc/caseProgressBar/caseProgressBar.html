@@ -1,0 +1,77 @@
+<template>
+    <div class="slds-theme_default slds-p-around_medium">
+        <table class="Indicator">
+            <tr class="Status slds-gutters">
+                <td>
+                    <div class={background.Discovery}>
+                        Discovery
+                    </div>
+                    <div class="vl"></div>
+                </td>
+                <td>
+                    <div class={background.Research}>
+                        Research
+                    </div>
+                    <div class="vl"></div>
+                </td>
+                <td>
+                    <div class={background.Processing}>
+                        Processing
+                    </div>
+                </td>
+                <td>
+                    <div class={background.Submitted}>
+                        Submitted
+                    </div>
+                    <div class="vl"></div>
+                </td>
+                <td>
+                    <div class={background.Approved}>
+                        Approved
+                    </div>
+                </td>
+            </tr>
+            <tr class="slds-m-top_large">
+                <td class="slds-p-top_large slds-p-around_medium">
+                    <div class={subStatusBackground.NeedMoreInformation}>
+                        Need More Information
+                    </div>
+                    <div class="vl"></div>
+                </td>
+                <td class="slds-p-top_large slds-p-around_medium">
+                    <div class={subStatusBackground.CustomMatarials}>
+                        Needs New / Custom Matarials
+                    </div>
+                    <div class="vl"></div>
+                </td>
+                <td><div class="slds-p-top_large slds-p-around_medium blank"></div></td>
+                <td class="slds-p-top_large slds-p-around_medium">
+                    <div class={subStatusBackground.Accepted}>
+                        Accepted
+                    </div>
+                    <div class="vl"></div>
+                </td>
+                <td><div class="slds-p-top_large slds-p-around_medium blank"></div></td>
+            </tr>
+            <tr style="position: relative;bottom: 15px;">
+                <td class="slds-p-around_medium">
+                    <div class={subStatusBackground.AwaitingIntroduction}>
+                        Awaiting Introduction
+                    </div>
+                </td>
+                <td class="slds-p-around_medium">
+                    <div class={subStatusBackground.AwaitingResponse}>
+                        Awaiting Response
+                    </div>
+                </td>
+                <td><div class="slds-p-around_medium blank"></div></td>
+                <td class="slds-p-top_large slds-p-around_medium">
+                    <div class={subStatusBackground.RevisionNeeded}>
+                        Revision Needed
+                    </div>
+                </td>
+                <td><div class="slds-p-around_medium blank"></div></td>
+            </tr>
+        </table>
+    </div>
+</template>

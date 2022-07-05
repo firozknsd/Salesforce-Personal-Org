@@ -1,0 +1,33 @@
+<template>
+    <lightning-card title="All Videos" icon-name="custom:custom81">
+        <template if:true={bool}>
+            <div class="slds-m-around_large" align="center">
+                <aura:component>
+                    <iframe width="80%" height="500" src={songLink} frameborder="0" allowfullscreen></iframe>
+                </aura:component>
+            </div>
+        </template>
+        <div>    
+            <span class="slds-m-left_large" onclick = "{handleImageClick}">
+                <image width="30.8%" height="200px" src="http://img.youtube.com/vi/jki2p78ppjQ/hqdefault.jpg" class="BeliverClass"></image>
+            </span>
+            <span class="slds-m-left_large" onclick = "{handleImageClick}">
+                <image width="30.8%" height="200px" src="http://img.youtube.com/vi/VHOeMIRLerA/hqdefault.jpg" class="KatyuChukoClass"></image>
+            </span>
+            <span class="slds-m-left_large" onclick = "{handleImageClick}">
+                <image width="30.8%" height="200px" src="http://img.youtube.com/vi/fhBYrqYU13w/hqdefault.jpg" class="BekhayaliClass"></image>
+            </span>
+        </div>
+        <div class="slds-m-top_large" >
+            <span class="slds-m-left_large" onclick = "{handleImageClick}">
+                <image width="30.8%" height="200px" src="http://img.youtube.com/vi/jki2p78ppjQ/hqdefault.jpg" class="BeliverClass"></image>
+            </span>
+            <span class="slds-m-left_large" onclick = "{handleImageClick}">
+                <image width="30.8%" height="200px" src="http://img.youtube.com/vi/VHOeMIRLerA/hqdefault.jpg" class="KatyuChukoClass"></image>
+            </span>
+            <span class="slds-m-left_large" onclick = "{handleImageClick}">
+                <image width="30.8%" height="200px" src="http://img.youtube.com/vi/fhBYrqYU13w/hqdefault.jpg" class="BekhayaliClass"></image>
+            </span>
+        </div>
+    </lightning-card>
+</template>

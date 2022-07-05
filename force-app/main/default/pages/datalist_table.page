@@ -1,0 +1,15 @@
+<apex:page standardController="Contact" recordSetVar="contacts" lightningStylesheets="true" tabStyle="Contact" showHeader="false">
+ 
+        <apex:sectionHeader />
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:dataList var="con" value="{!contacts}">
+                    <apex:outputText >{!con.Name}</apex:outputText>
+                    <apex:outputText >{!con.Phone}</apex:outputText>
+                    <apex:outputText >{!con.Title}</apex:outputText>
+                    <apex:outputText >{!con.Email}</apex:outputText>
+                </apex:dataList>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+  
+</apex:page>

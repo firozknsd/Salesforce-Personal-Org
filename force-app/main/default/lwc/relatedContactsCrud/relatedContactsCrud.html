@@ -1,0 +1,48 @@
+<template>
+    <lightning-card title="Contacts" icon-name="custom:custom23">
+        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+            <lightning-layout>
+                <lightning-layout-item class="slds-m-left_large">
+                    <lightning-input label="First Name" type="text" value={contact.FirstName} class="inptFirstName"></lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-m-left_large">
+                    <lightning-input label="Last Name" type="text" required value={contact.LastName} class="inptLastName"></lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-m-left_large">
+                    <lightning-input label="Email" type="email" value={contact.Email} class="inptEmail"></lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-m-left_large">
+                    <lightning-input label="Phone" type="phone" value={contact.Phone} class="inptPhone"></lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-m-left_large slds-m-top_x-small">
+                    <lightning-button
+                        variant="brand"
+                        label="Add"
+                        title="Add Contact"
+                        class="slds-float--right slds-p-around_medium"
+                        onclick={handleInsert}>
+                    </lightning-button>        
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+        <div class="slds-m-around_large">
+            <div if:false={isLoading} class="slds-is-relative">
+                <lightning-spinner
+                    alternative-text="Loading..." variant="brand">
+                </lightning-spinner>
+            </div>
+        </div>
+        <div if:true={dataList} class="slds-p-around_medium lgc-bg">
+            <lightning-datatable
+                    key-field="Id"
+                    data={dataList}
+                    columns={columns}
+                    onsave={handleSave}
+                    draft-values={saveDraftValues}
+                    hide-checkbox-column 
+                    show-row-number-column
+                    onrowaction={callRowAction}>
+            </lightning-datatable>
+        </div>
+    </lightning-card>
+</template>

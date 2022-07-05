@@ -1,0 +1,9 @@
+<template>
+    <div>
+        <lightning-carousel>
+            <template if:true={productInfo.url} for:each={productInfo.url} for:item="urlVar">
+                <lightning-carousel-image key={urlVar} src={urlVar}></lightning-carousel-image>
+            </template>
+        </lightning-carousel>
+    </div>
+</template>

@@ -1,0 +1,135 @@
+<apex:component >
+    <apex:attribute name="customerName" type="String" description=""></apex:attribute>
+    <apex:attribute name="roomNo" type="String" description=""></apex:attribute>
+    <apex:attribute name="email" type="String" description=""></apex:attribute>
+    <apex:attribute name="status" type="String" description=""></apex:attribute>
+    <apex:attribute name="checkInTime" type="String" description=""></apex:attribute>
+    <apex:attribute name="checkOutTime" type="String" description=""></apex:attribute>
+    <apex:attribute name="days" type="Integer" description=""></apex:attribute>
+    <apex:attribute name="price" type="Double" description=""></apex:attribute>
+    <apex:attribute name="totalAmount" type="Double" description=""></apex:attribute>
+    <apex:pageBlock >
+        <apex:pageBlockSection columns="2">
+            <apex:pageBlockSectionItem >
+                <apex:image value="{!$Resource.Hotel}" width="200" height="200"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:panelGrid >
+                    <apex:panelGrid columns="2" style="float:right;margin-left:230px;">
+                        <apex:outputLabel ><b>Address :</b></apex:outputLabel>
+                        <apex:panelGrid >
+                            <apex:outputLabel value="Amrapali Marg"/>
+                            <apex:outputLabel value="Vaishali Nagar"/>
+                            <apex:outputLabel value="Jaipur, Rajasthan"/>
+                            <apex:outputLabel value="305601"/>
+                        </apex:panelGrid>
+                    </apex:panelGrid>
+                    <apex:panelGrid columns="2" style="float:right;margin-left:230px;">
+                        <apex:outputLabel ><b>Contact :</b></apex:outputLabel>
+                        <apex:panelGrid >
+                            <apex:outputLabel value="+917737608055"/>
+                            <apex:outputLabel value="royal@jaipur.in"/>
+                        </apex:panelGrid>
+                    </apex:panelGrid>
+                </apex:panelGrid>
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+        <h1 style="height:100">INVOICE</h1>
+        <hr />
+        <apex:pageBlockSection columns="2">
+            <apex:pageBlockSectionItem >
+                <apex:panelGrid style="float:left">
+                    <apex:panelGrid columns="2" style="float:left">
+                        <apex:outputLabel ><b>Name :</b></apex:outputLabel>
+                        <apex:panelGrid >
+                            <apex:outputLabel >{!customerName}</apex:outputLabel>
+                        </apex:panelGrid>
+                    </apex:panelGrid>
+                    <apex:panelGrid columns="2" style="float:left">
+                        <apex:outputLabel ><b>Room No :</b></apex:outputLabel>
+                        <apex:panelGrid >
+                            <apex:outputLabel >{!roomNo}</apex:outputLabel>
+                        </apex:panelGrid>
+                    </apex:panelGrid>
+                    <apex:panelGrid columns="2" style="float:left">
+                        <apex:outputLabel ><b>Email :</b></apex:outputLabel>
+                        <apex:panelGrid >
+                            <apex:outputLabel >{!email}</apex:outputLabel>
+                        </apex:panelGrid>
+                    </apex:panelGrid>
+                    <apex:panelGrid columns="2" style="float:left">
+                        <apex:outputLabel ><b>Check In Time :</b></apex:outputLabel>
+                        <apex:panelGrid >
+                            <apex:outputLabel >{!checkInTime}</apex:outputLabel>
+                        </apex:panelGrid>
+                    </apex:panelGrid>
+                    <apex:panelGrid columns="2" style="float:left">
+                        <apex:outputLabel ><b>Check Out Time :</b></apex:outputLabel>
+                        <apex:panelGrid >
+                            <apex:outputLabel >{!checkOutTime}</apex:outputLabel>
+                        </apex:panelGrid>
+                    </apex:panelGrid>
+                </apex:panelGrid>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection columns="1">
+            <table width="700px" style="margin-top:30px;border:1px solid black;height:200px">
+                <tr>
+                    <th colspan="3" style="padding:20px;">Description</th>
+                    <th>Days</th>
+                    <th>Rent/Day</th>
+                    <th>Price</th>
+                </tr>
+                <tr>
+                    <td rowspan="4" colspan="3" style="padding:10px;">Provided Services By Hotel Royal</td>
+                    <td rowspan="4">{!days}</td>
+                    <td rowspan="4">{!price}</td>
+                    <td rowspan="4"></td>
+                </tr>
+            </table>
+            <table style="float:right;margin-top:3px;border-right:1px solid black;">
+                <tr>
+                    <td>Total Amount  </td>
+                    <td colspan="3" style="padding:17px;border-bottom:1px solid black;border-left:1px solid black;">{!totalAmount}</td>
+                </tr>
+            </table>
+        </apex:pageBlockSection>
+        
+        <apex:pageBlockSection columns="2">
+            <apex:pageBlockSectionItem >
+                <apex:panelGrid style="float:left">
+                    <apex:panelGrid columns="2" style="float:left;">
+                        <apex:outputLabel ><b>Payment Terms :</b></apex:outputLabel>
+                        <apex:panelGrid >
+                            <apex:outputLabel >Payment Within 30 Days</apex:outputLabel>
+                        </apex:panelGrid>
+                    </apex:panelGrid>
+                    <apex:panelGrid columns="2" style="float:left">
+                        <apex:outputLabel ><b>Payment Details :</b></apex:outputLabel>
+                    </apex:panelGrid>
+                    <apex:panelGrid columns="2" style="float:left">
+                        <apex:outputLabel >Bank : </apex:outputLabel>
+                        <apex:panelGrid >
+                            <apex:outputLabel >ICICI Bank</apex:outputLabel>
+                        </apex:panelGrid>
+                    </apex:panelGrid>
+                    <apex:panelGrid columns="2" style="float:left">
+                        <apex:outputLabel >Bank IFSC Code : </apex:outputLabel>
+                        <apex:panelGrid >
+                            <apex:outputLabel >ICICINASIRA</apex:outputLabel>
+                        </apex:panelGrid>
+                    </apex:panelGrid>
+                    <apex:panelGrid columns="2" style="float:left">
+                        <apex:outputLabel >Bank Account : </apex:outputLabel>
+                        <apex:panelGrid >
+                            <apex:outputLabel value="14900100014785"/>
+                        </apex:panelGrid>
+                    </apex:panelGrid>
+                </apex:panelGrid>
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:component>

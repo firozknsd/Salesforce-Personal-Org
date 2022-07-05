@@ -1,0 +1,23 @@
+<apex:page controller="AllSelectAccountWrapperController" showHeader="false">
+    <apex:form id="frm">
+       <apex:actionFunction name="allChecked" action="{!onIsCheck}" reRender="frm" />
+        <apex:actionFunction name="mannual" action="{!mannualCheck}" reRender="frm" />
+    	<apex:pageBlock title="All Accounts">
+        	<apex:pageBlockSection collapsible="false" title="All Accounts" columns="1">
+            	<apex:pageBlockTable value="{!accountWithData}" var="acc"> 
+                    <apex:column >
+                        <apex:facet name="header">
+                            <apex:inputCheckbox value="{!masterCheck}" onclick="allChecked();" />
+                        </apex:facet>
+                        <apex:inputCheckbox value="{!acc.isChecked}" onclick="mannual();" />
+                    </apex:column>
+                   
+                	<apex:column value="{!acc.account.Name}"></apex:column>
+                    <apex:column value="{!acc.account.Email__c}"></apex:column>
+                    <apex:column value="{!acc.account.Phone}"></apex:column>
+                    <apex:column value="{!acc.account.AccountNumber}"></apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

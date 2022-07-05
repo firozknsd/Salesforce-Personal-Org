@@ -1,0 +1,76 @@
+.inputBlogClass {
+    height: 300px;
+    margin: auto;
+    width: 50%;
+    padding: 60px;    
+    background-color: DodgerBlue;
+}
+.outputBlogClass {
+    height: 250px;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    background-color: rgb(235, 235, 235);
+}
+
+.locationClass {
+    background: transparent;
+    outline: none;
+    width:70%;
+    height:20px;
+    font-size: 20px;
+    border:none;
+    color:white;
+}
+::placeholder { 
+    color: white;
+    opacity: 1;
+}
+.locationClass:focus {
+    background: transparent;
+    outline: none;
+}
+
+.hr1 {
+    margin-top: 0px;
+    width: 70%;
+}
+
+.destinationClass {
+    background: transparent;
+    outline: none;
+    width:70%;
+    height:20px;
+    font-size: 20px;
+    margin-top: 20px;
+    border:none;
+    color:white;
+}
+
+button {
+    background-color: rgb(4, 129, 255);
+    border: none;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 50%;
+    margin-bottom: 30px;
+}
+
+button:hover {
+    background-color: white;
+}
+
+.routeClass {
+    width:300px;
+    text-align: left;
+    font-size: 20px;
+}
+.timeClass {
+    text-align: left;
+    font-size: 20px;
+    color: rgb(255, 167, 5);
+}

@@ -1,0 +1,22 @@
+<template>
+    <lightning-card>
+        <div class="slds-panel slds-size_medium slds-panel_docked slds-panel_docked-right slds-is-open" aria-hidden="false" style="margin-left:200px">
+            <img src={productinfo.src} style="height: 200px; width: 90%;">
+            <div class="slds-m-around_large">
+                <lightning-layout>
+                    <lightning-layout-item>
+                        <b>Price : <s>{productinfo.price}</s></b><br/>
+                        <b>Offer : </b>{productinfo.offer}% Off<br/>
+                        <b>Total : </b>{productinfo.total}/-<br/>
+                    </lightning-layout-item>
+                    <lightning-layout-item>
+                        <lightning-button style="margin-left : 100px" label="Add" variant="brand"> onclick={handleAdd}></lightning-button>
+                    </lightning-layout-item>
+                </lightning-layout>
+                <div class="slds-m-top_large">
+                    <b>Description :</b><lightning-formatted-text label="Description" value={productinfo.description}></lightning-formatted-text>
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+</template>

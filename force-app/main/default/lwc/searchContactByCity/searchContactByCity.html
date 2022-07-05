@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Contacts" icon-name="custom:custom21">
+        <div style="height: 300px;">
+            <lightning-datatable
+                    key-field="Id"
+                    data={data}
+                    columns={columns}>
+            </lightning-datatable>
+        </div>
+        <div class="slds-m-around_small">
+            <lightning-combobox
+                name="cboCityNames"
+                value={cityName}
+                options={cboCityNames}
+                onchange={handleOptions}        >
+    
+            </lightning-combobox>
+        </div>
+    </lightning-card>   
+</template>

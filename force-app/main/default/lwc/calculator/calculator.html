@@ -1,0 +1,52 @@
+<template>
+    <lightning-card icon-name="custom:custom28" title="Calculator" >
+        <div class="slds-m-around_medium">
+            <lightning-input type="number" 
+                label="First Number :" 
+                class="textFirst"
+                required=true>
+            </lightning-input>
+
+            <lightning-input 
+                type="number" 
+                label="Second Number :" 
+                class="textSecond"
+                required=true>
+            </lightning-input>
+            <div class="slds-m-top_medium">
+                <span class="slds-m-left_xx-large">
+                    <lightning-button 
+                        variant="brand" 
+                        label="+" 
+                        onclick={handleAdd} >
+                    </lightning-button>
+                </span>
+                <span class="slds-m-left_medium">
+                    <lightning-button 
+                    variant="neutral" 
+                    label="-" 
+                    onclick={handleSub}>
+                </lightning-button>
+                </span>
+                <span class="slds-m-left_medium">
+                    <lightning-button 
+                    variant="destructive" 
+                    label="*" 
+                    onclick={handleMul}>
+                </lightning-button>
+                </span>
+                <span class="slds-m-left_medium">
+                    <lightning-button 
+                    variant="neutral" 
+                    label="/" 
+                    onclick={handleDiv}>
+                </lightning-button>
+                </span>
+                <span class="slds-m-left_medium">
+                    <lightning-button variant="success" label="%" onclick={handleMod}></lightning-button>
+                </span>
+            </div>
+            <div class="slds-m-top_medium" align="center"><b class="currentClass">{resultValue}</b></div>
+        </div>
+    </lightning-card>
+</template>

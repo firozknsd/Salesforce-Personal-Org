@@ -1,0 +1,38 @@
+<template>
+    <lightning-card icon-name="custom:custom28" title="Filter your data" >
+        
+        <div class="slds-m-around_large">
+            <lightning-datatable
+                    key-field="id"
+                    data={data}
+                    hide-checkbox-column
+                    columns={columns}>
+            </lightning-datatable>
+        </div>  
+        <lightning-layout>
+            <lightning-layout-item>
+                <div class="slds-m-around_large">
+                    <lightning-checkbox-group 
+                        name="Checkbox Group"
+                        label="Checkbox Group"
+                        options={options}
+                        value={value}
+                        onchange={handleChange}>
+                    </lightning-checkbox-group>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item>
+                <div class="slds-m-around_large">
+                    <lightning-checkbox-group 
+                        name="State"
+                        label="State"
+                        options={stateOptions}
+                        value={stateValue}
+                        onchange={handleStateChange}>
+                    </lightning-checkbox-group>
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+        
+</lightning-card>
+</template>

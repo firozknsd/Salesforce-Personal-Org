@@ -1,0 +1,62 @@
+<template>
+    <lightning-card title="Search Contacts" icon-name="custom:custom15">
+        <div class="slds-p-around_medium lgc-bg">
+            <div>
+                <lightning-layout>
+                    <lightning-layout-item class="slds-p-bottom_medium">
+                        <lightning-input 
+                            placeholder="Name Or Email" 
+                            class="searchBox">
+                        </lightning-input>
+                    </lightning-layout-item>
+                    <lightning-layout-item class="slds-p-bottom_medium">
+                        <div class="slds-p-left_medium searchButtonClass">
+                            <lightning-button 
+                                label="Search" 
+                                variant="brand" 
+                                onclick={handleSearch}>
+                            </lightning-button>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item class="slds-p-bottom_medium">
+                        <lightning-combobox
+                            name="Page Size"
+                            value={pageSize}
+                            options={options}
+                            onchange={handleChange}
+                            class="comboBoxClass">
+                        </lightning-combobox>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </div>
+            <div>
+                <lightning-datatable
+                    key-field="Id"
+                    data={dataList}
+                    columns={columns}
+                    hide-checkbox-column="true">
+                </lightning-datatable>
+                <template if:true={flag}>
+                    <lightning-formatted-text value="Record Not Found !!" class="recordNotFoundClass"></lightning-formatted-text>
+                </template>
+            </div>
+            <div align="Right" class="slds-m-top_medium">
+                <span class="slds-m-right_medium;" style="float:left;">
+                    Page <b>{page}</b> of <b>{totalPage}</b>
+                </span>
+                <span class="slds-m-right_medium">
+                    <lightning-button label="First" variant="brand" onclick={handleFirst} disabled={disableFirstPrevious}></lightning-button>
+                </span>
+                <span class="slds-m-right_medium">
+                    <lightning-button label="Previous" variant="brand" onclick={handlePrevious} disabled={disableFirstPrevious}></lightning-button>
+                </span>
+                <span class="slds-m-right_medium">
+                    <lightning-button label="Next" variant="brand" onclick={handleNext} disabled={disableNextLast}></lightning-button>
+                </span>
+                <span>
+                    <lightning-button label="Last" variant="brand" onclick={handleLast} disabled={disableNextLast}></lightning-button>
+                </span>
+            </div>
+        </div>
+    </lightning-card>
+</template>

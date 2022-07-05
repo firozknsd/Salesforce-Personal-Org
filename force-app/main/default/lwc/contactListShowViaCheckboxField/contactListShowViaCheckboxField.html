@@ -1,0 +1,65 @@
+<template>
+    <lightning-card title="Contact List" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            <lightning-input 
+                label="Name"
+                type="checkbox"
+                class="masterNameCheckBox"
+                checked="flag"
+                onchange={handleNameCheckboxChange}>
+            </lightning-input>
+            
+            <lightning-input 
+                label="Email" 
+                type="checkbox" 
+                class="masterEmailCheckBox" 
+                onchange={handleEmailCheckboxChange}>
+            </lightning-input>
+
+            <lightning-input 
+                label="Phone" 
+                type="checkbox" 
+                class="masterPhoneCheckBox" 
+                onchange={handlePhoneCheckboxChange}>
+            </lightning-input>
+
+            <lightning-input
+                label="All" 
+                type="checkbox" 
+                class="masterAllCheckBox" 
+                onchange={handleAllCheckboxChange}>
+            </lightning-input>
+
+        </div>
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_striped">
+            <thead>
+                <tr>
+                    <template if:true={boolNameVisible}>
+                        <th>Name</th>
+                    </template>
+                    <template if:true={boolEmailVisible}>
+                        <th>Email</th>
+                    </template>
+                    <template if:true={boolPhoneVisible}>
+                        <th>Phone</th>
+                    </template> 
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={contacts} for:item="contact">
+                    <tr key={contact}>
+                        <template if:true={boolNameVisible}>
+                            <td>{contact.Name}</td>
+                        </template>
+                        <template if:true={boolEmailVisible}>
+                            <td>{contact.Email}</td>
+                        </template>
+                        <template if:true={boolPhoneVisible}>
+                            <td>{contact.Phone}</td>
+                        </template>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </lightning-card>
+</template>

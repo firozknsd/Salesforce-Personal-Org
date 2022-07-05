@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="Parent Card" icon-name="standard:opportunity">
+        
+            <lightning-button class="slds-m-around_medium" label="Show Message On Child" onclick={handleShowChild}></lightning-button>
+            <lightning-formatted-text value={parentMessage} class="slds-m-top_medium"></lightning-formatted-text>
+        
+            <c-child-component class="slds-m-top_medium" message-var={messageVar} child-flag={flag} onselected={showMessage}></c-child-component>
+       
+    </lightning-card>
+</template>

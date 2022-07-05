@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Array practices" icon-name="custom:custom1">
+        <div class="slds-m-left_medium">
+            <ul>
+                <template for:each={weekDays} for:item="weekItems">
+                        <li key={weekItems}>{weekItems}</li>
+                </template>
+            </ul>
+        </div>
+    </lightning-card>
+</template>

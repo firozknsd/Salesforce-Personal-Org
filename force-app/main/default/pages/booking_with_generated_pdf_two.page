@@ -1,0 +1,13 @@
+<apex:page controller="BookingWithGeneratedBillController" applyBodyTag="false" renderAs="pdf">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:pageBlockSectionItem >
+                    <apex:outputPanel id="frm">
+                        <c:pdfcomponent customerName="{!name}" roomNo="{!roomNo}" email="{!$CurrentPage.parameters.booking.email__c}" status="{!booking.Status__c}" checkInTime="{!booking.Check_In__c}" checkOutTime="{!booking.Check_Out_Time__c}" days="{!days}" price="{!price}" totalAmount="{!totalAmount}"/>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

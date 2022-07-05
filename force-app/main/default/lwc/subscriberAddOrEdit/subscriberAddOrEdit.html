@@ -1,0 +1,40 @@
+<template>
+    <lightning-card title="All Items" icon-name="custom:custom67">
+        <div class="slds-m-around_medium">
+            <!--
+            <table>
+                 <thead> 
+                      <tr >
+                          <th>Product</th>
+                          <th>Qty</th> 
+                          <th>Prize</th>
+                      </tr>
+                 </thead>
+                 <tbody>
+                     <template for:each={dataList} for:item="data">
+                        <tr key ={data}>
+                            <td>{data.product}</td>
+                            <td>{data.qty}</td>
+                            <td>{data.prize}</td>                     
+                        </tr>
+                    </template>            
+                 </tbody>
+            </table>-->
+         </div>
+        <footer class="slds-card__footer">
+            <div>
+                <table style="border : 2px solid rgb(219, 216, 216);"> 
+                    <thead>
+                        <tr>
+                            <td><div align="center"><b>Grand Total </b></div></td>
+                            <td><div align="center"><b>500000</b></div></td>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="slds-m-top_large" align="left">
+                <lightning-input type="Checkbox" label="If you want to do any changes"></lightning-input>
+            </div>
+        </footer>
+    </lightning-card>
+</template>

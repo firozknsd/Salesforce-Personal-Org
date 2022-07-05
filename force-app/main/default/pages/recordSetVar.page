@@ -1,0 +1,13 @@
+<apex:page standardController="Contact" recordSetVar="contact" docType="pdf">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection title="All Contacts">
+                <apex:pageBlockTable value="{!contact}" var="item">
+                    <apex:column value="{!item.name}"/>
+                    <apex:column value="{!item.email}"/>
+                    <apex:column value="{!item.phone}"/>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,71 @@
+.Indicator td {
+    text-align: center;
+    height: 60px;
+}
+.div-border {
+    padding: 20px;
+    margin-left: 10px;
+    font-size: medium;
+}
+.NeedMoreInformation {
+    margin: auto;
+    padding-top: 22px;
+    height: 60px;
+    width:200px;
+}
+.CustomMatarials {
+    margin: auto;
+    padding-top: 22px;
+    height: 60px;
+    width:200px;
+}
+.Accepted {
+    margin: auto;
+    padding-top: 22px;
+    height: 60px;
+    width:200px;
+}
+.AwaitingIntroduction {
+    margin: auto;
+    padding-top: 22px;
+    height: 60px;
+    width:200px;
+}   
+.AwaitingResponse {
+    margin: auto;
+    padding-top: 22px;
+    height: 60px;
+    width:200px;
+}
+.RevisionNeeded {
+    margin: auto;
+    padding-top: 22px;
+    height: 60px;
+    width:200px;
+}
+.blank {
+    margin: auto;
+    padding-top: 22px;
+    height: 60px;
+    width:200px;
+}
+.background-color-grey {
+    background-color: #b9b9b9;
+    color: white;
+}
+.background-color-green {
+    background-color: #259237;
+    color: white;
+}
+.background-color-blue {
+    background-color: #014486;
+    color: white;
+}
+.vl {
+    border-left: 2px solid #b9b9b9;
+    height: 17px;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    position: absolute;
+  }

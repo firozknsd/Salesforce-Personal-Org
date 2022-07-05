@@ -1,0 +1,69 @@
+<template>
+    <lightning-card icon-name="standard:apps" title="Calculator" >
+        <div class="slds-m-around_x-small">
+            <lightning-input 
+                type="text" 
+                label="First Number :" 
+                class="textFirst"
+                placeholder="Enter First Number"
+                required=true>
+            </lightning-input>
+
+            <lightning-input 
+                type="text" 
+                label="Second Number :" 
+                class="textSecond"
+                placeholder="Enter Second Number"
+                required=true>
+            </lightning-input>
+            <div class="slds-m-top_medium">
+                <span>
+                    <lightning-button 
+                        label="Add"
+                        value="Add"
+                        onclick={handleCalculate} 
+                        icon-name="utility:add"
+                        icon-position="right">
+                    </lightning-button>
+                </span>
+                <span>
+                    <lightning-button
+                        label="Substract" 
+                        value="Sub"
+                        onclick={handleCalculate}
+                        icon-name="utility:dash"
+                        icon-position="right">
+                    </lightning-button>
+                </span>
+                <span>
+                    <lightning-button 
+                        label="Multiply" 
+                        value="Mul"
+                        onclick={handleCalculate}
+                        icon-name="utility:close"
+                        icon-position="right">
+                    </lightning-button>
+                </span>
+                <span>
+                    <lightning-button
+                        label="Divide"
+                        value="Div"
+                        icon-name="utility:magicwand"
+                        icon-position="right"
+                        onclick={handleCalculate}>
+                    </lightning-button>
+                </span>
+            </div>
+            <div class="slds-m-top_medium" style="color:rgb(27, 175, 126)">
+                <b>
+                    <span>
+                        Result is 
+                    </span>
+                    <span>
+                        : {resultValue}
+                    </span>
+                </b>
+            </div>
+        </div>
+    </lightning-card>
+</template>

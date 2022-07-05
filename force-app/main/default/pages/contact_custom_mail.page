@@ -1,0 +1,40 @@
+<apex:page controller="ContactCustomMailController" showHeader="false" tabStyle="Contact">
+    <apex:pageMessages />
+    <apex:form id="frm" title="SendBox">
+        <apex:actionFunction name="onHtmlBodyActive" action="{!onHtmlBodyActive}" />
+        <apex:pageBlock >
+        	<apex:pageBlockSection title="Send Box" collapsible="false" columns="1">
+            	<apex:pageBlockSectionItem >
+                	<apex:outputLabel value="TO"/>
+                    <apex:inputText value="{!to}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                	<apex:outputLabel value="CC"/>
+                    <apex:inputText value="{!cc}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                	<apex:outputLabel value="BCC"/>
+                    <apex:inputText value="{!bcc}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                	<apex:outputLabel value="Subject"/>
+                    <apex:inputText value="{!subject}" style="width:425px;"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                	<apex:inputTextarea value="{!body}" richText="True" rendered="{!IF(htmlBody,true,false)}" />
+                    <apex:inputTextarea value="{!body}" rendered="{!IF(htmlBody,false,true)}" style="width:425px;height:240px"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputText ></apex:outputText>
+                    <apex:panelGrid columns="2">
+                        <apex:inputCheckbox value="{!htmlBody}" onclick="onHtmlBodyActive();">
+                            <apex:param name="" value="true" assignTo="{!check}"/>
+                            HTML Body
+                        </apex:inputCheckbox>
+                        <apex:commandButton value="Send" action="{!onSendMail}"/>
+                    </apex:panelGrid>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

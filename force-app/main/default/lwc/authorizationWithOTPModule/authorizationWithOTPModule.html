@@ -1,0 +1,56 @@
+<template>
+    <lightning-card>
+        <div if:false={showInfo}>
+            <div if:false={showVerScr}>
+                <lightning-layout>
+                    <lightning-layout-item>
+                        <div class="slds-m-left_large">
+                            <lightning-input class="emailVal" label="Email" type="email" onclick={handleEraseErr}></lightning-input>
+                        </div>
+                        <div if:true={showEmailErr} class="slds-m-left_large" style="color: rgb(172, 6, 6);">
+                            Invalid Email Id !
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item class="slds-m-top_large">
+                        <div class="slds-m-left_large">
+                            <lightning-button label="Send OTP" onclick={handleSendOTP}></lightning-button>
+                        </div>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </div>
+            <div if:true={showVerScr}>
+                <lightning-layout>
+                    <lightning-layout-item>
+                        <div class="slds-m-left_large">
+                            <lightning-input class="otpVal" label="OTP" type="text" onclick={handleEraseErr}></lightning-input>
+                        </div>
+                        <div if:true={showTimer} class="slds-m-left_large">
+                            <div style="font-size: 10px;">Valid for (1 min) {timeVal}</div>
+                        </div>
+                        <div if:true={showOtpErr} class="slds-m-left_large" style="color: rgb(172, 6, 6);">
+                            Invalid OTP !
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item class="slds-m-top_large">
+                        <div class="slds-m-left_large">
+                            <lightning-button label="Verify OTP" onclick={handleVerifyOTP}></lightning-button>
+                        </div>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </div>
+        </div>
+        <div if:true={showInfo}>
+            <lightning-layout>
+                <lightning-layout-item>
+                    <div class="slds-m-around_small">
+                        <lightning-datatable
+                                key-field="Id"
+                                data={conData}
+                                columns={conInfoCol}>
+                        </lightning-datatable>
+                    </div>  
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,9 @@
+.searchButtonClass {
+    margin-top: 20px;
+}
+.comboBoxClass {
+    margin-left: 825px;
+}
+.recordNotFoundClass {
+    color: tomato;
+}

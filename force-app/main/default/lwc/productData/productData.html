@@ -1,0 +1,40 @@
+<template>
+    <div class="slds-grid slds-gutters slds-m-top_medium slds-wrap">
+        <template if:true={productRecords} for:each={productRecords} for:item="pro">
+            <div class="slds-col slds-align_absolute-center slds-col slds-size_12-of-12 slds-medium-size_6-of-12 slds-large-size_3-of-12 slds-p-around_x-small"
+                key={pro.Id}>
+                <span>
+                    <div class="productInfo custom-box" if:true={pro.product.Name}>
+                        <div class="container">
+                            <img class="image" src={pro.singleUrl}>
+                            <div class="text-block">
+                                ₹{pro.price}
+                            </div>
+                        </div>
+                        <div class="slds-m-around_small">
+                            <div class="categoryText slds-m-top_medium">Category</div>
+                            <div class="productName"><b>{pro.product.Name}</b></div>
+                            <div class="productDescription slds-m-top_medium">{pro.product.Description}</div>
+                            <div class="infoButton slds-m-top_medium">
+                                <a class="fill-div" onclick={handleInfo} data-id={pro.id}>
+                                    <lightning-layout>
+                                        <lightning-layout-item>
+                                            Info
+                                        </lightning-layout-item>
+                                        <lightning-layout-item>
+                                            <div class="infoArrow">
+                                                <lightning-icon class="arrowInfo" size="xx-small"
+                                                    icon-name="utility:forward">
+                                                </lightning-icon>
+                                            </div>
+                                        </lightning-layout-item>
+                                    </lightning-layout>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </span>
+            </div>
+        </template>
+    </div>
+</template>

@@ -1,0 +1,77 @@
+<template>
+    <lightning-card title="Cart Parent" icon-name="custom:custom45">
+        <lightning-layout>
+            <lightning-layout-item float="right">
+                <div class="slds-m-around_medium">
+                    <lightning-layout>
+                        <lightning-layout-item>
+                            <lightning-input
+                                type="checkbox"
+                                label="Laptop"
+                                value="laptop"
+                                class="chekboxItem"
+                                checked={boolLaptop}
+                                onchange={handleChange}>
+                            </lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item>
+                            <p style="margin-left:50px">{laptopQty}</p>
+                        </lightning-layout-item>
+                    </lightning-layout>  
+                    <lightning-layout>
+                        <lightning-layout-item>
+                            <lightning-input
+                                type="checkbox"
+                                label="Monitor"
+                                value="monitor"
+                                class="chekboxItem"
+                                checked={boolMonitor}
+                                onchange={handleChange}>
+                            </lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item>
+                            <p style="margin-left:50px">{monitorQty}</p>
+                        </lightning-layout-item>
+                    </lightning-layout> 
+                    <lightning-layout>
+                        <lightning-layout-item>
+                            <lightning-input
+                                type="checkbox"
+                                label="Keyboard"
+                                value="keyboard"
+                                class="chekboxItem"
+                                checked={boolKeyboard}
+                                onchange={handleChange}>
+                            </lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item>
+                            <p style="margin-left:50px">{keyboardQty}</p>
+                        </lightning-layout-item>
+                    </lightning-layout> 
+                    <lightning-layout>
+                        <lightning-layout-item>
+                            <lightning-input
+                                type="checkbox"
+                                label="Mouse"
+                                value="mouse"
+                                class="chekboxItem"
+                                checked={boolMouse}
+                                onchange={handleChange}>
+                            </lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item>
+                            <p style="margin-left:50px">{mouseQty}</p>
+                        </lightning-layout-item>
+                    </lightning-layout> 
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item float="">
+                    <div>
+                        <template if:true={showContent}>
+                            <c-wish-list-child productinfo={productinfo} ongetqtyevent={handleGetQty} ></c-wish-list-child>
+                        </template>
+                    </div>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

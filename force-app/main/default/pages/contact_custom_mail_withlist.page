@@ -1,0 +1,62 @@
+<apex:page controller="ContactCustomMailWithListController" showHeader="false" tabStyle="Contact">
+    <apex:pageMessages />
+    <apex:form id="frm" title="SendBox With Records">
+        <apex:actionFunction name="onIsChecked" action="{!onIsChecked}" reRender="frm" status="actStatusId"/>
+        <apex:actionFunction name="onAddAttachment" action="{!onAddAttachment}" status="actStatusId" reRender="frm" />
+        <apex:actionStatus id="actStatusId" >
+            <apex:facet name="start">
+                <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.25; z-index: 1000; background-color: black;">
+                    &nbsp;
+                </div>
+                <div style="position: fixed; left: 0; top: 0; bottom: 0; right: 0; z-index: 1001; margin: 15% 50%">
+                    <div style="display: inline-block; padding: 2px; background-color: #fff; width: 125px;">
+                        <img src="/img/loading.gif" style="float: left; margin: 8px;" />
+                        <span style="display: inline-block; padding: 10px 0px;">Please Wait...</span>
+                    </div>
+                </div>
+            </apex:facet>
+        </apex:actionStatus>
+        
+        <apex:pageBlock >
+            <apex:pageBlockSection title="Send Box" collapsible="false" columns="1">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="TO"/>
+                    <apex:outputLabel value="{!to}" style="border: 1px solid black;padding:3px;" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Subject"/>
+                    <apex:inputText value="{!subject}" style="width:425px;"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel ></apex:outputLabel>
+                    <apex:inputTextarea value="{!body}" style="width:425px;height:240px"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputText ></apex:outputText>
+                    <apex:panelGrid columns="2">
+                        <apex:inputCheckbox value="{!check}" onclick="onAddAttachment();">
+                            HTML Body
+                        </apex:inputCheckbox>
+                        <apex:commandButton value="Send" action="{!onSendMail}"/>
+                    </apex:panelGrid>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+        <apex:pageBlock title="Choose Contacts To Send Mail">
+            <apex:pageBlockTable value="{!wrapperListData}" var="con" title="Choose Contacts To Send Mail">
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:inputCheckbox value="{!masterCheck}"/>
+                    </apex:facet>
+                    <apex:inputCheckbox value="{!con.isChecked}" onclick="onIsChecked();" >
+                    </apex:inputCheckbox>
+                </apex:column>
+                <apex:column value="{!con.contact.Name}"/>
+                <apex:column value="{!con.contact.LastName}"/>
+                <apex:column value="{!con.contact.Email}"/>
+                <apex:column value="{!con.contact.Phone}"/>
+            </apex:pageBlockTable>        	
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

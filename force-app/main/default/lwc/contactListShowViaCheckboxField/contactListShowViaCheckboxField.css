@@ -1,0 +1,15 @@
+.masterNameCheckBox {
+    margin-left:10px;
+}
+.masterEmailCheckBox {
+    margin-left:90px;
+    margin-top:-20px;
+}
+.masterPhoneCheckBox {
+    margin-left:170px;
+    margin-top:-20px;
+}
+.masterAllCheckBox {
+    margin-left:250px;
+    margin-top:-20px;
+}

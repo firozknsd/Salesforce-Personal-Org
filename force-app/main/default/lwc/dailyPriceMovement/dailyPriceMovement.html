@@ -1,0 +1,47 @@
+<template>
+    <lightning-card title="Daily Price Movement" icon-name="standard:Account">
+        <div class="slds-m-around_medium">
+            <div style="width : 300px">
+                <lightning-input type="date" name="Start Date" label="Start Date" ></lightning-input>
+            </div>
+            <div class="slds-m-top_medium">
+                <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+                    <thead>
+                        <tr>
+                            <th rowspan="2">Commodity</th>
+                            <th>Today</th>
+                            <th>Yesterday</th>
+                            <th>1 Week Ago</th>
+                            <th>Month Starting</th>
+                            <th>3 Months Ago</th>
+                            <th style="text-align: center;" colspan="5">Peak & Trough(Last 90 days)</th>
+                        </tr>
+                        <tr>
+                            <th>4 May 2021</th>
+                            <th>3 May 2021</th>
+                            <th>27 April 2021</th>
+                            <th>1 May 2021</th>
+                            <th>3 Feb 2021</th>
+                            <th>Higest</th>
+                            <th>Higest Rate Date</th>
+                            <th>Lowest</th>
+                            <th>Lowest Rate Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={dailyPriceMovement} for:item="dpm">
+                            <tr key={dpm}>
+                                <td>{dpm.commudity}</td>
+                                <td>{dpm.today}</td>
+                                <td class={yesterdayClass}>{dpm.yesterday}</td>
+                                <td class={oneWeekAgoClass}>{dpm.oneWeekAgo}</td>
+                                <td class={monthsStartingClass}>{dpm.monthStarting}</td>
+                                <td class={threeMonthsAgoClass}>{dpm.threeMonthsAgo}</td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </lightning-card>
+</template>

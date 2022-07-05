@@ -1,0 +1,36 @@
+<apex:page title="All Accounts" standardController="Account" tabstyle="Account" showHeader="false" recordSetVar="accounts" lightningStylesheets="true">
+    <apex:sectionHeader title="Account" subtitle="All Records"/>
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockButtons >
+                <apex:commandButton value="First" action="{!First}" />
+            	<apex:commandButton value="Next" action="{!Next}"/>
+                <apex:commandButton value="Previous" action="{!Previous}"/>
+                <apex:commandButton value="Last" action="{!Last}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="1">
+                <apex:variable var="rowNo" value="{!0}"/>
+                <apex:pageBlockTable value="{!accounts}" var="acc">
+                    <apex:column headerValue="#">
+                        <apex:variable var="rowNo" value="{!rowNo+1}" />
+                        {!rowNo}
+                    </apex:column>
+                    <apex:column headerValue="Action">
+                        <apex:variable var="Id" value="acc.Id" />
+                    	<apex:outputLink value="/apex/add_new_account?Id={!acc.Id}">Edit</apex:outputLink>
+                        <apex:outputText value=" / "/>
+                        <apex:outputLink value="/apex/account_detail?Id={!acc.Id}">Detail</apex:outputLink>
+                    </apex:column>
+                    <apex:column value="{!acc.Name}" />
+                    <apex:column value="{!acc.Site}" />
+                    <apex:column value="{!acc.BillingState}" />
+                    <apex:column value="{!acc.Phone}" />
+                    <apex:column value="{!acc.Type}" />
+                    <apex:column headerValue="Account Alias">
+                    	<apex:outputText value="{!$User.Alias}" />
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

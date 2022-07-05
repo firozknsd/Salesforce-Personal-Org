@@ -1,0 +1,97 @@
+<template>
+    <lightning-card title="Account Detail" icon-name="custom:custom24">
+        <div class="slds-m-around_large">
+            <lightning-combobox
+                name="Account"
+                label="Choose Account"
+                value={value}
+                onchange={handleChange}
+                options={roleOptions}>
+            </lightning-combobox>
+            <div class="slds-m-top_large">
+                <template if:true={showInfo}>
+                    <lightning-layout>
+                        <lightning-layout-item>
+                            <b>Name :</b> <lightning-formatted-text value={selectedValues.Name}></lightning-formatted-text>
+                        </lightning-layout-item>
+                        <lightning-layout-item>
+                            <div class="slds-m-left_large">
+                                <b>Account No. :</b> <lightning-formatted-text value={selectedValues.AccountNo}></lightning-formatted-text>
+                            </div>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                    <lightning-layout>
+                        <lightning-layout-item>
+                            <b>Phone :</b> <lightning-formatted-text value={selectedValues.Phone}></lightning-formatted-text>
+                        </lightning-layout-item>
+                        <lightning-layout-item>
+                            <div class="slds-m-left_large">
+                                <b>Fax :</b> <lightning-formatted-text value={selectedValues.Fax}></lightning-formatted-text>
+                            </div>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                    <lightning-layout>
+                        <lightning-layout-item>
+                            <b>City :</b> <lightning-formatted-text value={selectedValues.City}></lightning-formatted-text>
+                        </lightning-layout-item>
+                        <lightning-layout-item>
+                            <div class="slds-m-left_large">
+                                <b>State :</b> <lightning-formatted-text value={selectedValues.State}></lightning-formatted-text>
+                            </div>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </template>
+            </div>
+            <div class="slds-m-top_large">
+                <b>Contact Detail : </b>
+                <template if:true={showInfo}>
+                    <lightning-layout>
+                        <lightning-layout-item>
+                            <b>First Name :</b> <lightning-formatted-text value={contactDetail.FirstName}></lightning-formatted-text>
+                        </lightning-layout-item>
+                        <lightning-layout-item>
+                            <div class="slds-m-left_large">
+                                <b>Last Name. :</b> <lightning-formatted-text value={contactDetail.LastName}></lightning-formatted-text>
+                            </div>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                    <lightning-layout>
+                        <lightning-layout-item>
+                            <b>Email :</b> <lightning-formatted-text value={contactDetail.Email}></lightning-formatted-text>
+                        </lightning-layout-item>
+                        <lightning-layout-item>
+                            <div class="slds-m-left_large">
+                                <b>Phone :</b> <lightning-formatted-text value={contactDetail.Phone}></lightning-formatted-text>
+                            </div>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </template>
+            </div>
+            <div class="slds-m-top_large">
+                <b>Opportunity Detail : </b>
+                <template if:true={showInfo}>
+                    <lightning-layout>
+                        <lightning-layout-item>
+                            <b>Name :</b> <lightning-formatted-text value={opportunityDetail.Name}></lightning-formatted-text>
+                        </lightning-layout-item>
+                        <lightning-layout-item>
+                            <div class="slds-m-left_large">
+                                <b>Stage Name. :</b> <lightning-formatted-text value={opportunityDetail.StageName}></lightning-formatted-text>
+                            </div>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                    <lightning-layout>
+                        <lightning-layout-item>
+                            <b>Close Date :</b> <lightning-formatted-text value={opportunityDetail.CloseDate}></lightning-formatted-text>
+                        </lightning-layout-item>
+                        <lightning-layout-item>
+                            <div class="slds-m-left_large">
+                                <b>Amount :</b> <lightning-formatted-text value={opportunityDetail.Amount}></lightning-formatted-text>
+                            </div>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </template>
+            </div>
+        </div>
+    </lightning-card>
+</template>

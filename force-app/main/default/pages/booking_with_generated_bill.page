@@ -1,0 +1,73 @@
+<apex:page controller="BookingWithGeneratedBillController" showHeader="false" tabStyle="Booking__c" >
+    <apex:pageMessages ></apex:pageMessages>
+    <apex:form id="frm">
+        <apex:pageBlock title="Insert new booking" rendered="{!!check}">
+            <apex:pageBlockSection >
+                <apex:pageBlockSectionItem >
+                    <apex:outputText >Customer</apex:outputText>
+                    <apex:inputField value="{!booking.Customer__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputText >RoomNo</apex:outputText>
+                    <apex:inputField value="{!booking.Room_No__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputText >Email</apex:outputText>
+                    <apex:inputField value="{!booking.Email__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputText >Status</apex:outputText>
+                    <apex:inputField value="{!booking.Status__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputText >CheckIn Time</apex:outputText>
+                    <apex:inputField value="{!booking.Check_In__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputText >CheckOut Time</apex:outputText>
+                    <apex:inputField value="{!booking.Check_Out_Time__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:commandButton value="Add" action="{!addRecords}" rerender="frm">
+                    	<apex:param name="Check" value="true" assignTo="{!check}"/>
+                    </apex:commandButton>     
+                    <apex:outputText ></apex:outputText>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+        <apex:pageBlock title="Booking detail" rendered="{!check}">
+            <apex:pageBlockSection >
+                <apex:pageBlockSectionItem >
+                    <apex:outputText >Customer</apex:outputText>
+                    <apex:outputText value="{!name}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputText >RoomNo</apex:outputText>
+                    <apex:outputText value="{!roomNo}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputText >Email</apex:outputText>
+                    <apex:outputText value="{!booking.Email__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputText >Status</apex:outputText>
+                    <apex:outputText value="{!booking.Status__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputText >CheckIn Time</apex:outputText>
+                    <apex:outputText value="{!booking.Check_In__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputText >CheckOut Time</apex:outputText>
+                    <apex:outputText value="{!booking.Check_Out_Time__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:commandButton value="Download PDF" action="{!downloadPDF}" reRender="frm">
+                        <apex:param name="" value="true" assignTo="{!flag}"/>
+                    </apex:commandButton>                                   
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

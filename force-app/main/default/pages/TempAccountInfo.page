@@ -1,0 +1,8 @@
+<apex:page >
+    <apex:includeScript value="{!URLFOR($Resource.Interstatefont,'/new_font/Interstate-bold.ttf')}"/>   
+    <apex:pageBlock >
+        <apex:pageBlockSection > 
+            
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>

@@ -1,0 +1,36 @@
+<template>
+    <lightning-card titlte="Data Show" icon-name="custom:custom24">
+        <lightning-layout>
+            <lightning-layout-item class="slds-m-around_large" style="width: 30%;">
+                <lightning-combobox
+                    name="Select Object"
+                    label="Select Object"
+                    value={selectedObject}
+                    placeholder="Select Progress"
+                    options={objectsList}
+                    onchange={handleSelectObject} >
+                </lightning-combobox>
+
+            </lightning-layout-item>
+            <lightning-layout-item>
+                <lightning-dual-listbox 
+                    label="Select Fields"
+                    source-label="Available"
+                    selected-label="Selected"
+                    options={fieldsValues}
+                    onchange={handleSelectFields}>
+                </lightning-dual-listbox>
+            </lightning-layout-item>
+            
+        </lightning-layout>
+        <lightning-layout>
+            <lightning-layout-item class="slds-m-around_large" style="height: 300px;">
+                <lightning-datatable 
+                        key-field="Id"
+                        data={data}
+                        columns={columns}>
+                </lightning-datatable>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card> 
+</template>

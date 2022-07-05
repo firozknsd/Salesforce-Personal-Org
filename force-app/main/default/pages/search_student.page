@@ -1,0 +1,24 @@
+<apex:page controller="StudentNameSearchController" tabStyle="Student__c">
+    <apex:form title="Search">
+    	<apex:pageBlock >
+        	<apex:pageBlockSection columns="2">
+            	<apex:pageBlockSectionItem >
+                    <apex:outputText value="Student Name : "/>
+                    <apex:inputText value="{!name}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:commandButton value="Search" action="{!searchRecord}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="1">
+            	<apex:pageBlockTable value="{!studentList}" var="stu">
+                	<apex:column value="{!stu.Name}" />
+                    <apex:column value="{!stu.Last_Name__c}" />
+                    <apex:column value="{!stu.Gender__c}" />
+                    <apex:column value="{!stu.Phone__c}" />
+                    <apex:column value="{!stu.Date_Of_Birth__c}" />
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,55 @@
+<template>
+    <lightning-card title="Calculate, What you want..." icon-name="custom:custom81">
+        
+        <div class = "inputBlogClass" align="center" >
+            <div>
+                <button class="slds-button slds-button_icon" onclick={handleCar}>
+                    <img src={carLogo} height="30" width="30"/>
+                </button>
+                <button class="slds-button slds-button_icon trainClass" onclick={handleTrain}>
+                    <img src={trainLogo} height="30" width="30"/>
+                </button>
+                <button class="slds-button slds-button_icon" onclick={handleTrail}>
+                    <img src={trailLogo} height="30" width="30"/>
+                </button>
+                <button class="slds-button slds-button_icon" onclick={handleBicycle}>
+                    <img src={bicycleLogo} height="30" width="30"/>
+                </button>
+                <button class="slds-button slds-button_icon" onclick={handleAirplane}>
+                    <img src={airplaneLogo} height="30" width="30"/>
+                </button>
+            </div>
+            <div>
+                <input title="location" placeholder="Location" class="locationClass"></input></br>
+                <hr class="hr1">
+                <input title="destination" placeholder="Destination" class="destinationClass"></input>
+                <hr class="hr1">
+            </div>
+        </div>
+        <div class = "outputBlogClass" align="center">
+            <div class="slds-m-top_large">
+                <lightning-layout>
+                    <lightning-layout-item>
+                        <div class="slds-m-around_medium">
+                            <img src={carLogo} height="30" width="30"/>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item>
+                        <div class="slds-m-around_medium">
+                            <div class="slds-m-around_medium routeClass">
+                                <lightning-formatted-text value={route}>
+                                </lightning-formatted-text>
+                            </div>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item>
+                        <div class="slds-m-around_medium timeClass">
+                            <lightning-formatted-text value={time}>
+                            </lightning-formatted-text>
+                        </div>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </div>
+        </div>
+    </lightning-card>
+</template>

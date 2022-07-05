@@ -1,0 +1,27 @@
+<apex:page controller="CustomPickListController" showHeader="false">
+    <apex:pageMessages />
+    <apex:form id="frm">
+        <apex:actionStatus id="st" startText="Loading....." ></apex:actionStatus>
+        <apex:actionFunction name="country" action="{!country}" reRender="frm"/>
+        <apex:actionFunction name="state" action="{!state}" reRender="frm"/>
+        <apex:pageBlock >
+            <apex:pageBlockSection columns="3">
+                <apex:outputText value="Country"/>
+                <apex:outputText value="State"/>
+                <apex:outputText value="City"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection columns="3">
+                <apex:selectList size="1" value="{!con}" multiselect="false" onchange="country();" >
+                	<apex:selectOptions value="{!items}"></apex:selectOptions>
+                </apex:selectList>
+                <apex:selectList size="1" value="{!sta}" multiselect="false" onchange="state();" >
+                	<apex:selectOptions value="{!state}"></apex:selectOptions>
+                </apex:selectList>
+                <apex:selectList size="1" value="{!cit}" multiselect="false">
+                	<apex:selectOptions value="{!city}"></apex:selectOptions>
+                </apex:selectList>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

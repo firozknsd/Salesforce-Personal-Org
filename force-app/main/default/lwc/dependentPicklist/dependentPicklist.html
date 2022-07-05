@@ -1,0 +1,33 @@
+<template>
+    <lightning-card title="Dependent Picklist" icon-name="custom:custom61">
+        <div class="slds-m-around_medium">
+            <lightning-combobox
+                label="Country"
+                name="Country"
+                value={country}
+                options={countryOptions}
+                placeholder="None"
+                onchange={handleSelectCombobox}>
+            </lightning-combobox>
+            <lightning-combobox
+                label="State"
+                name="State"
+                value={state}
+                options={stateOptions}
+                placeholder="None"
+                onchange={handleSelectCombobox}>
+            </lightning-combobox>
+            <lightning-combobox
+                label="City"
+                name="City"
+                value={city}
+                options={cityOptions}
+                placeholder="None"
+                onchange={handleSelectCombobox}>
+            </lightning-combobox>
+            <div class="slds-m-around_medium">
+                <span>Pncode :</span><lightning-formatted-text value={pin}></lightning-formatted-text>
+            </div>
+        </div>
+    </lightning-card>
+</template>

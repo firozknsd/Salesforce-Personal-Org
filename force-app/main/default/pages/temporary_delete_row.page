@@ -1,0 +1,27 @@
+<apex:page controller="TemporaryDeleteRowController" showHeader="false">
+    <apex:form >
+    	<apex:pageBlock >
+            <apex:pageBlockTable var="con" value="{!contactList}">
+                <apex:column headerValue="First Name">
+                    <apex:inputField value="{!con.FirstName}" />
+                </apex:column>
+                <apex:column headerValue="Last Name">
+                    <apex:inputText value="{!con.LastName}" />
+                </apex:column>
+                <apex:column headerValue="Email">
+                    <apex:inputField value="{!con.Email}" />
+                </apex:column>
+                <apex:column headerValue="Account Name">
+                    <apex:inputField value="{!con.AccountId}" />
+                </apex:column>
+            </apex:pageBlockTable>
+            <apex:pageBlockButtons >
+            	<apex:commandButton value="Add Row" action="{!addRow}"/>
+                <apex:commandButton value="Delete" action="{!onDelete}"/>
+                <apex:commandButton value="Save" action="{!onInsert}"/>
+                <apex:commandButton value="Cancel" action="{!onCancel}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>

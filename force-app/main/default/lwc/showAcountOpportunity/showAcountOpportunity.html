@@ -1,0 +1,42 @@
+<template>
+    <lightning-card title="Account Detail" icon-name="custom:custom24">
+        <div class="slds-m-around_large">
+            <lightning-combobox
+                name="Account"
+                label="Choose Account"
+                value={value}
+                onchange={handleChange}
+                options={roleOptions}>
+            </lightning-combobox>
+            <div class="slds-p-around_medium lgc-bg">
+                <template if:true={opportunityDetail}>
+                    <div style="height: 300px;">
+                        <lightning-datatable
+                            key-field="Id"
+                            data={opportunityDetail}
+                            columns={columns}>
+                        </lightning-datatable>
+                    </div>
+                </template>
+            </div>
+            <div class="slds-p-around_medium lgc-bg">
+                <lightning-input label="Name" class="oppName"></lightning-input>
+                <lightning-combobox
+                    name="StageName"
+                    label="Stage Name"
+                    value={stageValue}
+                    options={options}
+                    onchange={handleStageNameChange} >
+                </lightning-combobox>
+                <lightning-input label="Close Date" type="Date" class="closeDate"></lightning-input>
+                <lightning-input label="Amount" class="amount"></lightning-input>
+                <p  class="slds-p-around_medium"></p>
+                <lightning-button
+                    variant="brand"
+                    label="Save"
+                    onclick={handleSave}>
+                </lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

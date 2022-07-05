@@ -1,0 +1,61 @@
+<template>
+    <lightning-card title="Contact Radio Pagination" icon-name="custom:custom61"> 
+        <div class ="slds-p-around_medium">
+            <lightning-layout>
+                <lightning-layout-item class ="slds-p-left_medium">
+                    <lightning-input
+                        type="text"
+                        label="Name"
+                        class="getName">
+                    </lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item class ="slds-p-left_medium">
+                    <lightning-input
+                        type="number"
+                        label="Phone"
+                        class="getPhone">
+                    </lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-m-horizontal_medium">
+                    <lightning-input
+                        type="email"
+                        label="Email"
+                        class="getEmail">
+                    </lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item class ="slds-p-top_large">
+                    <lightning-button
+                        label="Search"
+                        variant="brand"
+                        onclick={handleGetValue}>
+                    </lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-datatable
+                    key-field="Id"
+                    data={dataList}
+                    columns={columns}
+                    hide-checkbox-column="true"
+                    show-row-number-column=true>
+
+            </lightning-datatable>
+        </div>
+        <div style="margin-left:3%;">
+            <template for:each={options} for:item="item">
+                <fieldset key={item.value} style="display: block; float: left;">
+                    <div class="slds-form-element__control">
+                        <span class="slds-radio">
+                            <input name="radiogroup" id={item.value} type="radio" value={item.value} onchange={handleRecordValue}/>
+                            <label class="slds-radio__label" for={item.value}>
+                                <span class="slds-radio_faux"></span>
+                                <span class="slds-form-element__label">{item.label}</span>
+                            </label>
+                        </span>
+                    </div>
+                </fieldset>
+            </template><br/><br/>
+        </div>
+    </lightning-card>
+</template>
